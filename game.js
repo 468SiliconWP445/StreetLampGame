@@ -10,7 +10,6 @@ let intervalIDs = {};
 function changeImage(streetlight) {
     if (streetlight.index >= images.length - 1) {
         clearInterval(intervalIDs[streetlight.id]);
-        console.log(`Stopped at index: ${streetlight.index} for ${streetlight.id}`);
         return;
     }
 
@@ -32,8 +31,6 @@ function startStreetlight(streetlight) {
     if (delay < 0) {
         delay += 24 * 60 * 60 * 1000;
     }
-
-    console.log(`Scheduled ${streetlight.id} at: ${firstChangeTime.toLocaleTimeString()} (Offset: ${randomOffset} min)`);
 
     setTimeout(() => {
         changeImage(streetlight);
