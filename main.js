@@ -5,7 +5,6 @@ let intervalID;
 function changeImage() {
     if (index >= images.length - 1) {  //Stop when index reaches 36
         clearInterval(intervalID);  //Stop the interval
-        console.log("Stopped at index:", index); //Debugging
         return;
     }    
     index++;
@@ -15,7 +14,7 @@ function changeImage() {
 function imageChanger() {
     let timeInput = document.getElementById("switchTime").value;
     let intervalInput = parseInt(document.getElementById("interval").value) * 1000; //Convert to ms
-    intervalInput = intervalInput / 18;
+    intervalInput = intervalInput / 36;
 
     if (!timeInput || isNaN(intervalInput) || intervalInput <= 0) {
         alert("Please enter valid values for both fields.");
