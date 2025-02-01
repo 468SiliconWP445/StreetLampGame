@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <h2>Simulator Settings</h2>
+    
+    <label for="initialTime">Switch on time (HH:MM 24hr format):</label>
+    <input type="time" id="switchTime">
+    
+    <br><br>
+    
+    <label for="interval">Interval (seconds):</label>
+    <input type="number" id="interval" min="1">
+    
+    <br><br>
+
+    <button onclick="imageChanger()">Start</button>
+
+    <br><br>
     <img id="streetlightImage" src="0.jpg" alt="Streetlight Image">
     <script src="main.js"></script>
 </body>
