@@ -5,6 +5,7 @@ let intervalID;
 function changeImage() {
     if (index >= images.length - 1) {  //Stop when index reaches 36
         clearInterval(intervalID);  //Stop the interval
+        console.log("Stopped at index:", index); //Debugging
         return;
     }    
     index++;
