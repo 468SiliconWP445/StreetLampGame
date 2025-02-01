@@ -3,8 +3,8 @@ let index = 0;
 let intervalID;
 
 function changeImage() {
-    if (index >= images.length - 1) {  //Stop when index reaches 36
-        clearInterval(intervalID);  //Stop the interval
+    if (index >= images.length - 1) {  
+        clearInterval(intervalID);
         return;
     }    
     index++;
@@ -13,11 +13,11 @@ function changeImage() {
 
 function imageChanger() {
     let timeInput = document.getElementById("switchTime").value;
-    let intervalInput = parseInt(document.getElementById("interval").value) * 1000; //Convert to ms
-    intervalInput = intervalInput / 36;
+    let intervalInput = parseInt(document.getElementById("interval").value) * 1000; // Convert to ms
+    let sensitivityInput = parseInt(document.getElementById("sensitivity").value); // Sensitivity in minutes
 
-    if (!timeInput || isNaN(intervalInput) || intervalInput <= 0) {
-        alert("Please enter valid values for both fields.");
+    if (!timeInput || isNaN(intervalInput) || intervalInput <= 0 || isNaN(sensitivityInput)) {
+        alert("Please enter valid values for all fields.");
         return;
     }
 
@@ -25,6 +25,9 @@ function imageChanger() {
     let [hours, minutes] = timeInput.split(":").map(Number);
     let firstChangeTime = new Date();
     firstChangeTime.setHours(hours, minutes, 0, 0);
+
+    let randomOffset = Math.floor(Math.random() * (2 * sensitivityInput + 1)) - sensitivityInput;
+    firstChangeTime.setMinutes(firstChangeTime.getMinutes() + randomOffset);
 
     let delay = firstChangeTime - now;
     if (delay < 0) {
