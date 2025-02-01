@@ -45,6 +45,7 @@ function imageChanger() {
     streetlights.forEach((streetlight, i) => {
         let timeInput = document.getElementById(`switchTime${i + 1}`).value;
         let intervalInput = parseInt(document.getElementById(`interval${i + 1}`).value) * 1000;
+        intervalInput = intervalInput / 36;
         let sensitivityInput = parseInt(document.getElementById(`sensitivity${i + 1}`).value);
 
         if (!timeInput || isNaN(intervalInput) || intervalInput <= 0 || isNaN(sensitivityInput)) {
