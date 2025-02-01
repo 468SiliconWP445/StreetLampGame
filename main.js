@@ -3,14 +3,18 @@ let index = 0;
 let intervalID;
 
 function changeImage() {
-    index = (index + 1) % images.length;
-    document.getElementById("streetlightImage").src = images[index];
+    if (index >= images.length - 1) {  //Stop when index reaches 36
+        clearInterval(intervalID);  //Stop the interval
+        return;
+    }    
+    index++;
+    document.getElementById("streetlightImage").src = images[index];  
 }
 
 function imageChanger() {
     let timeInput = document.getElementById("switchTime").value;
     let intervalInput = parseInt(document.getElementById("interval").value) * 1000; //Convert to ms
-    intervalInput = intervalInput / 36;
+    intervalInput = intervalInput / 18;
 
     if (!timeInput || isNaN(intervalInput) || intervalInput <= 0) {
         alert("Please enter valid values for both fields.");
