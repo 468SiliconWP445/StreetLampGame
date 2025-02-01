@@ -1,0 +1,5 @@
+This is an interactive, online SOX streetlight simulator program, written in HTML, CSS, and JavaScript. 
+The streetlight shown is a Philips MI26. 
+The "Switch on time" selector allows the user to select a time for the streetlight to turn on at. 
+The "Warm up time" feature allows the user to specify how long the streetlight should take to warm up.
+The "Sensitivity" feature simulates the photocell, and the higher the sensitivity, the more random the turn on time can be e.g. if the user selects 5, and a "Switch on time" of 20:00, the streetlight will turn on at a random time between 19:55 and 20:05.
