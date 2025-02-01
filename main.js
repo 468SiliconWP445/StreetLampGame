@@ -8,7 +8,8 @@ function changeImage() {
 }
 
 function imageChanger() {
-    let timeInput = document.getElementById("initialTime").value;
+    let timeInput = document.getElementById("switchTime").value;
+    timeInput = timeInput / 36
     let intervalInput = parseInt(document.getElementById("interval").value) * 1000; //Convert to ms
 
     if (!timeInput || isNaN(intervalInput) || intervalInput <= 0) {
