@@ -9,8 +9,8 @@ function changeImage() {
 
 function imageChanger() {
     let timeInput = document.getElementById("switchTime").value;
-    timeInput = timeInput / 36
     let intervalInput = parseInt(document.getElementById("interval").value) * 1000; //Convert to ms
+    intervalInput = intervalInput / 36;
 
     if (!timeInput || isNaN(intervalInput) || intervalInput <= 0) {
         alert("Please enter valid values for both fields.");
